@@ -1,20 +1,20 @@
 const MODEL_URLS = [
   "https://teachablemachine.withgoogle.com/models/tTYdfh6E2/",
-  "/static/my_model/",
+  "./static/my_model/",
 ];
 const PHOTO_LIBRARY = [
-  { filename: "angry.png", image_path: "/photos/angry.png" },
-  { filename: "boring.png", image_path: "/photos/boring.png" },
-  { filename: "bıkmış.png", image_path: "/photos/bıkmış.png" },
-  { filename: "kurnaz.png", image_path: "/photos/kurnaz.png" },
-  { filename: "magara_adami.png", image_path: "/photos/magara_adami.png" },
-  { filename: "merhaba.png", image_path: "/photos/merhaba.png" },
-  { filename: "ne_diyosun_be.png", image_path: "/photos/ne_diyosun_be.png" },
-  { filename: "ordek.png", image_path: "/photos/ordek.png" },
-  { filename: "perfect.png", image_path: "/photos/perfect.png" },
-  { filename: "rainbow.png", image_path: "/photos/rainbow.png" },
-  { filename: "scream.png", image_path: "/photos/scream.png" },
-  { filename: "sus.png", image_path: "/photos/sus.png" }
+  { filename: "angry.png", image_path: "./photos/angry.png" },
+  { filename: "boring.png", image_path: "./photos/boring.png" },
+  { filename: "bıkmış.png", image_path: "./photos/bıkmış.png" },
+  { filename: "kurnaz.png", image_path: "./photos/kurnaz.png" },
+  { filename: "magara_adami.png", image_path: "./photos/magara_adami.png" },
+  { filename: "merhaba.png", image_path: "./photos/merhaba.png" },
+  { filename: "ne_diyosun_be.png", image_path: "./photos/ne_diyosun_be.png" },
+  { filename: "ordek.png", image_path: "./photos/ordek.png" },
+  { filename: "perfect.png", image_path: "./photos/perfect.png" },
+  { filename: "rainbow.png", image_path: "./photos/rainbow.png" },
+  { filename: "scream.png", image_path: "./photos/scream.png" },
+  { filename: "sus.png", image_path: "./photos/sus.png" }
 ];
 const WEBCAM_WIDTH = 960;
 const WEBCAM_HEIGHT = 720;

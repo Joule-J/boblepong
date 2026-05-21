@@ -22,7 +22,7 @@ body {
   overflow: hidden;
   background:
     linear-gradient(rgba(249, 237, 91, 0.18), rgba(249, 237, 91, 0.18)),
-    url("/static/squarepants.jpg") center center / cover no-repeat fixed;
+    url("./squarepants.jpg") center center / cover no-repeat fixed;
   color: var(--ink);
 }
 
