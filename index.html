@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bob L'eponge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Bangers&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-body app-body-full">
+      <div class="topbar">
+        <nav class="topbar-modes">
+          <button class="mode-tab active" data-screen="liveGeneratorScreen">Live Meme</button>
+          <button class="mode-tab" data-screen="guessModeScreen">Seviye Modu</button>
+        </nav>
+        <div class="topbar-brand">
+          <span class="topbar-title" id="topbarTitle">Bob L'eponge</span>
+        </div>
+        <div class="topbar-user">Inan</div>
+      </div>
+
+      <div class="screens">
+        <section id="liveGeneratorScreen" class="screen active">
+          <div class="stage">
+            <div class="stage-header">
+              <div class="stage-meta">
+                <span class="stage-eyebrow">Kamera</span>
+                <span class="stage-title">Pozunu al</span>
+              </div>
+              <button class="btn btn-primary" id="startLiveMode">▶ Başlat</button>
+            </div>
+
+            <div class="video-wrap">
+              <canvas id="liveCanvas" class="pose-canvas"></canvas>
+              <div class="video-overlay">
+                <div id="liveSuccessBadge" class="badge badge-success hidden">✓ Eşleşti</div>
+              </div>
+            </div>
+
+            <div class="hints-bar" id="liveHints"></div>
+          </div>
+
+          <div class="stage">
+            <div class="stage-header">
+              <div class="stage-meta">
+                <span class="stage-eyebrow">Tahmin</span>
+                <span class="stage-title" id="liveTargetTitle">Meme bekleniyor</span>
+              </div>
+            </div>
+
+            <div class="meme-wrap">
+              <img id="liveTargetImage" alt="" />
+              <div class="meme-placeholder" id="livePlaceholder">
+                <span class="ph-icon">◻</span>
+                <p>Poz al — meme görünür</p>
+              </div>
+              <div class="meme-label-bar" id="liveLabelBar" style="display:none">
+                <span class="meme-name" id="liveMemeLabel">—</span>
+                <span class="meme-tag">Tahmin</span>
+              </div>
+
+              <div class="result-overlay" id="liveResultOverlay">
+                <span class="result-label">Eşleşme</span>
+                <span class="result-score" id="liveResultScore">0</span>
+                <span class="result-name" id="liveResultName">—</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="guessModeScreen" class="screen">
+          <div class="stage">
+            <div class="stage-header">
+              <div class="stage-meta">
+                <span class="stage-eyebrow">Hedef</span>
+                <span class="stage-title" id="guessLevelTitle">Seviye 1</span>
+              </div>
+              <div class="level-indicator">
+                <span class="level-num" id="guessLevelCounter">0 / 0</span>
+                <button class="btn btn-primary" id="startGuessMode">▶ Başlat</button>
+              </div>
+            </div>
+
+            <div class="meme-wrap">
+              <img id="guessTargetImage" alt="" />
+              <div class="meme-placeholder" id="guessPlaceholder">
+                <span class="ph-icon">◻</span>
+                <p>Başlat — hedef görünür</p>
+              </div>
+              <div class="meme-label-bar" id="guessLabelBar" style="display:none">
+                <span class="meme-name" id="guessMemeLabel">—</span>
+                <span class="meme-tag">Hedef</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stage">
+            <div class="stage-header">
+              <div class="stage-meta">
+                <span class="stage-eyebrow">Kamera</span>
+                <span class="stage-title">Pozu tut, seviyeyi geç</span>
+              </div>
+              <div id="guessSuccessBadge" class="badge badge-success hidden">✓ Sonraki</div>
+            </div>
+
+            <div class="video-wrap">
+              <canvas id="guessCanvas" class="pose-canvas"></canvas>
+            </div>
+
+            <div class="hints-bar" id="guessHints"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
