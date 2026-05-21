@@ -1,6 +1,6 @@
 [
   {
-    "motion_package_id": "92932270-e893-4072-a2ff-a06e2aa2bac0",
+    "motion_package_id": "4375e841-1cba-4f7d-bf5a-6395ab322de3",
     "pattern_name": "api_motion_package",
     "tags": [
       "api",
@@ -54,13 +54,13 @@
           0.18,
           0.55
         ],
-        "body_center": [
-          0.5,
-          0.72
-        ],
         "right_hand_center": [
           0.82,
           0.55
+        ],
+        "body_center": [
+          0.5,
+          0.72
         ]
       },
       "provider_name": "heuristic-fallback"
@@ -87,7 +87,7 @@
     ],
     "source_frame_count": 3,
     "provider_name": "heuristic-fallback",
-    "created_at": "2026-05-21T21:21:52.583543+00:00",
-    "updated_at": "2026-05-21T21:21:52.583552+00:00"
+    "created_at": "2026-05-21T22:45:15.130840+00:00",
+    "updated_at": "2026-05-21T22:45:15.130850+00:00"
   }
 ]

@@ -87,7 +87,8 @@
                 <span class="stage-title" id="guessLevelTitle">Niveau 1</span>
               </div>
               <div class="level-indicator">
-                <span class="level-num" id="guessLevelCounter">0 / 0</span>
+                <div class="guess-progress" id="guessProgress" aria-label="Progression des niveaux"></div>
+                <button class="btn btn-secondary" id="skipGuessLevel">Pas</button>
                 <button class="btn btn-primary btn-start" id="startGuessMode">▶ Jouer</button>
               </div>
             </div>
@@ -118,8 +119,6 @@
             <div class="video-wrap">
               <canvas id="guessCanvas" class="pose-canvas"></canvas>
             </div>
-
-            <div class="hints-bar" id="guessHints"></div>
           </div>
 
         </section>
