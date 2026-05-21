@@ -1,0 +1,7 @@
+.git/
+.DS_Store
+.pytest_cache/
+.work/
+app/
+tests/
+requirements.txt
