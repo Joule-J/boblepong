@@ -18,7 +18,6 @@ const PHOTO_LIBRARY = [
 ];
 const WEBCAM_WIDTH = 960;
 const WEBCAM_HEIGHT = 720;
-const MATCH_THRESHOLD = 0.9;
 const HOLD_FRAMES = 4;
 
 const state = {
@@ -171,6 +170,11 @@ function predictionForTarget(predictions, targetPhoto) {
   return predictions.find((item) => normalizeName(item.className) === target) || null;
 }
 
+function isTopPrediction(prediction, predictions) {
+  if (!prediction || !predictions.length) return false;
+  return normalizeName(predictions[0].className) === normalizeName(prediction.className);
+}
+
 function photoForPrediction(prediction) {
   if (!prediction) return null;
   const predictedStem = normalizeName(prediction.className);
@@ -199,7 +203,7 @@ function handleLiveMode(predictions) {
   if (!state.live.running) return;
   const match = predictions[0] || null;
   const probability = match ? match.probability : 0;
-  const matched = probability >= MATCH_THRESHOLD;
+  const matched = Boolean(match);
   const topPhoto = photoForPrediction(match);
   if (topPhoto) setLiveTarget(topPhoto);
 
@@ -222,7 +226,7 @@ function handleGuessMode(predictions) {
   if (!state.guess.running || !state.guess.target) return;
   const match = predictionForTarget(predictions, state.guess.target);
   const probability = match ? match.probability : 0;
-  const matched = probability >= MATCH_THRESHOLD;
+  const matched = isTopPrediction(match, predictions);
   state.guess.holdFrames = matched ? state.guess.holdFrames + 1 : 0;
   renderHints("guess", matched, probability, photoStem(state.guess.target));
 
